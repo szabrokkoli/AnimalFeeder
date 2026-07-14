@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+
+  <packageId>Szabrokkoli.AnimalFeeder</packageId>
+
+  <name>Animal Feeder</name>
+
+  <author>Szabrokkoli</author>
+
+  <description>A feeder for animals.</description>
+
+  <supportedVersions>
+  <li>1.6</li>
+</supportedVersions>
+
+</ModMetaData>

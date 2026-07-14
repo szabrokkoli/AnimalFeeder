@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="FurnitureBase">
+    <defName>AnimalTrough</defName>
+    <label>animal trough</label>
+    <description>A through to feed animals.</description>
+    
+    <!-- Ez köti össze az XML-t a C# kóddal. Ha írsz saját osztályt, ezt kell átírnod a sajátodra. -->
+    <thingClass>Building_Storage</thingClass> 
+    
+    <graphicData>
+      <!-- Point exactly to the front image -->
+      <texPath>Things/Building/Trough_front</texPath> 
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,1)</drawSize>
+    </graphicData>
+    
+    <!-- Lehetővé teszi, hogy fából, fémből vagy kőből építsék -->
+    <stuffCategories>
+      <li>Woody</li>
+      <li>Metallic</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>30</costStuffCount> <!-- 30 db anyag kell hozzá -->
+    
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>300</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <Mass>10</Mass>
+    </statBases>
+    
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <maxItemsInCell>2</maxItemsInCell>
+      
+      <fixedStorageSettings>
+        <priority>Important</priority>
+        <filter>
+          <categories>
+            <li>Foods</li>
+          </categories>
+        </filter>
+      </fixedStorageSettings>
+      
+      <defaultStorageSettings>
+        <priority>Important</priority>
+        <filter>
+          <categories>
+            <li>Foods</li>
+          </categories>
+          <disallowedCategories>
+            <li>Meals</li>
+            <li>AnimalProductRaw</li>
+          </disallowedCategories>
+          <thingDefs>
+            <li>Kibble</li>
+            <li>Hay</li>
+          </thingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    
+    <surfaceType>Item</surfaceType>
+  </ThingDef>
+</Defs>
